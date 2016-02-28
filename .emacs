@@ -10,15 +10,21 @@
                          ("melpa" . "https://melpa.org/packages/")))
 ;; Apparence
 ;; sudo apt-get install fonts-inconsolata
-(set-face-attribute 'default nil :font "Inconsolata-14" )
-(set-frame-font "Inconsolata-14" nil t)
+;;(set-face-attribute 'default nil :font "Inconsolata-14" )
+;;(set-frame-font "Inconsolata-14" nil t)
 
 ;; Load Theme
 (defun zenburn-init ()
   (load-theme 'zenburn))
+(defun evil-init () 
+  (evil-mode 1))
 
 (add-hook 'after-init-hook 'zenburn-init)
+(add-hook 'after-init-hook 'evil-init)
 
 (custom-set-variables
  '(custom-safe-themes (quote ("20e359ef1818a838aff271a72f0f689f5551a27704bf1c9469a5c2657b417e6c" default))))
 (custom-set-faces)
+
+(global-set-key [f8] 'neotree-toggle)
+
